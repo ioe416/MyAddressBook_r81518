@@ -29,17 +29,34 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.column1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pro_comp_listview = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pro_name_listview = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.per_comp_tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.per_comp_listview = new System.Windows.Forms.ListView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.per_name_listview = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.contactType_label = new System.Windows.Forms.Label();
+            this.myCheckBox1 = new MyAddressBook_r81518.MyCheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ext_label4 = new System.Windows.Forms.Label();
+            this.ext4 = new System.Windows.Forms.TextBox();
+            this.ext_label3 = new System.Windows.Forms.Label();
+            this.ext3 = new System.Windows.Forms.TextBox();
+            this.ext_label2 = new System.Windows.Forms.Label();
+            this.ext2 = new System.Windows.Forms.TextBox();
+            this.ext_label1 = new System.Windows.Forms.Label();
+            this.ext1 = new System.Windows.Forms.TextBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -73,51 +90,211 @@
             this.firstName_txtbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.importContacts_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.per_comp_tabControl.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(184, 335);
+            this.groupBox1.Size = new System.Drawing.Size(269, 425);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacts";
             // 
-            // listView1
+            // tabControl1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.column1});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(178, 316);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.UseWaitCursor = true;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 16);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(263, 406);
+            this.tabControl1.TabIndex = 0;
             // 
-            // column1
+            // tabPage1
             // 
-            this.column1.Text = "Full Name";
+            this.tabPage1.Controls.Add(this.tabControl2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(255, 380);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Professional";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(249, 374);
+            this.tabControl2.TabIndex = 0;
+            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pro_comp_listview);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(241, 348);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Company";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pro_comp_listview
+            // 
+            this.pro_comp_listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.pro_comp_listview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pro_comp_listview.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.pro_comp_listview.LabelWrap = false;
+            this.pro_comp_listview.Location = new System.Drawing.Point(3, 3);
+            this.pro_comp_listview.Name = "pro_comp_listview";
+            this.pro_comp_listview.Size = new System.Drawing.Size(235, 342);
+            this.pro_comp_listview.TabIndex = 0;
+            this.pro_comp_listview.UseCompatibleStateImageBehavior = false;
+            this.pro_comp_listview.View = System.Windows.Forms.View.Details;
+            this.pro_comp_listview.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 140;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pro_name_listview);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(241, 348);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Name";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pro_name_listview
+            // 
+            this.pro_name_listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.pro_name_listview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pro_name_listview.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.pro_name_listview.LabelWrap = false;
+            this.pro_name_listview.Location = new System.Drawing.Point(3, 3);
+            this.pro_name_listview.Name = "pro_name_listview";
+            this.pro_name_listview.Size = new System.Drawing.Size(235, 342);
+            this.pro_name_listview.TabIndex = 1;
+            this.pro_name_listview.UseCompatibleStateImageBehavior = false;
+            this.pro_name_listview.View = System.Windows.Forms.View.Details;
+            this.pro_name_listview.SelectedIndexChanged += new System.EventHandler(this.Pro_name_listview_SelectedIndexChanged);
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 140;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.per_comp_tabControl);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(255, 380);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Personal";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // per_comp_tabControl
+            // 
+            this.per_comp_tabControl.Controls.Add(this.tabPage5);
+            this.per_comp_tabControl.Controls.Add(this.tabPage6);
+            this.per_comp_tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.per_comp_tabControl.Location = new System.Drawing.Point(3, 3);
+            this.per_comp_tabControl.Name = "per_comp_tabControl";
+            this.per_comp_tabControl.SelectedIndex = 0;
+            this.per_comp_tabControl.Size = new System.Drawing.Size(249, 374);
+            this.per_comp_tabControl.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.per_comp_listview);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(241, 348);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "Company";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // per_comp_listview
+            // 
+            this.per_comp_listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3});
+            this.per_comp_listview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.per_comp_listview.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.per_comp_listview.LabelWrap = false;
+            this.per_comp_listview.Location = new System.Drawing.Point(3, 3);
+            this.per_comp_listview.Name = "per_comp_listview";
+            this.per_comp_listview.Size = new System.Drawing.Size(235, 342);
+            this.per_comp_listview.TabIndex = 1;
+            this.per_comp_listview.UseCompatibleStateImageBehavior = false;
+            this.per_comp_listview.View = System.Windows.Forms.View.Details;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.per_name_listview);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(241, 348);
+            this.tabPage6.TabIndex = 1;
+            this.tabPage6.Text = "Name";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // per_name_listview
+            // 
+            this.per_name_listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4});
+            this.per_name_listview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.per_name_listview.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.per_name_listview.LabelWrap = false;
+            this.per_name_listview.Location = new System.Drawing.Point(3, 3);
+            this.per_name_listview.Name = "per_name_listview";
+            this.per_name_listview.Size = new System.Drawing.Size(235, 342);
+            this.per_name_listview.TabIndex = 1;
+            this.per_name_listview.UseCompatibleStateImageBehavior = false;
+            this.per_name_listview.View = System.Windows.Forms.View.Details;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.contactType_label);
+            this.groupBox2.Controls.Add(this.myCheckBox1);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.ext_label4);
+            this.groupBox2.Controls.Add(this.ext4);
+            this.groupBox2.Controls.Add(this.ext_label3);
+            this.groupBox2.Controls.Add(this.ext3);
+            this.groupBox2.Controls.Add(this.ext_label2);
+            this.groupBox2.Controls.Add(this.ext2);
+            this.groupBox2.Controls.Add(this.ext_label1);
+            this.groupBox2.Controls.Add(this.ext1);
             this.groupBox2.Controls.Add(this.comboBox4);
             this.groupBox2.Controls.Add(this.comboBox3);
             this.groupBox2.Controls.Add(this.comboBox2);
@@ -150,84 +327,127 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.firstName_txtbox);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(202, 12);
+            this.groupBox2.Location = new System.Drawing.Point(287, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(484, 443);
+            this.groupBox2.Size = new System.Drawing.Size(399, 443);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "information";
+            this.groupBox2.Text = "DETAILS";
             // 
-            // label18
+            // label19
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(276, 305);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(21, 13);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "ext";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(202, 67);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(71, 13);
+            this.label19.TabIndex = 48;
+            this.label19.Text = "Contact Type";
             // 
-            // textBox4
+            // contactType_label
             // 
-            this.textBox4.Location = new System.Drawing.Point(299, 301);
-            this.textBox4.MaxLength = 4;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(46, 20);
-            this.textBox4.TabIndex = 43;
+            this.contactType_label.AutoSize = true;
+            this.contactType_label.Location = new System.Drawing.Point(212, 115);
+            this.contactType_label.Name = "contactType_label";
+            this.contactType_label.Size = new System.Drawing.Size(48, 13);
+            this.contactType_label.TabIndex = 47;
+            this.contactType_label.Text = "Personal";
             // 
-            // label17
+            // myCheckBox1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(276, 268);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(21, 13);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "ext";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.myCheckBox1.Location = new System.Drawing.Point(212, 89);
+            this.myCheckBox1.Name = "myCheckBox1";
+            this.myCheckBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.myCheckBox1.Size = new System.Drawing.Size(50, 20);
+            this.myCheckBox1.TabIndex = 46;
+            this.myCheckBox1.UseVisualStyleBackColor = true;
+            this.myCheckBox1.CheckedChanged += new System.EventHandler(this.MyCheckBox1_CheckedChanged);
             // 
-            // textBox3
+            // button1
             // 
-            this.textBox3.Location = new System.Drawing.Point(299, 264);
-            this.textBox3.MaxLength = 4;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(46, 20);
-            this.textBox3.TabIndex = 41;
+            this.button1.Location = new System.Drawing.Point(287, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // ext_label4
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(276, 229);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(21, 13);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "ext";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.ext_label4.AutoSize = true;
+            this.ext_label4.Location = new System.Drawing.Point(146, 305);
+            this.ext_label4.Name = "ext_label4";
+            this.ext_label4.Size = new System.Drawing.Size(21, 13);
+            this.ext_label4.TabIndex = 44;
+            this.ext_label4.Text = "ext";
+            this.ext_label4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.ext_label4.Visible = false;
             // 
-            // textBox2
+            // ext4
             // 
-            this.textBox2.Location = new System.Drawing.Point(299, 225);
-            this.textBox2.MaxLength = 4;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(46, 20);
-            this.textBox2.TabIndex = 39;
+            this.ext4.Location = new System.Drawing.Point(171, 301);
+            this.ext4.MaxLength = 4;
+            this.ext4.Name = "ext4";
+            this.ext4.Size = new System.Drawing.Size(46, 20);
+            this.ext4.TabIndex = 43;
+            this.ext4.Visible = false;
             // 
-            // label15
+            // ext_label3
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(276, 189);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(21, 13);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "ext";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.ext_label3.AutoSize = true;
+            this.ext_label3.Location = new System.Drawing.Point(146, 266);
+            this.ext_label3.Name = "ext_label3";
+            this.ext_label3.Size = new System.Drawing.Size(21, 13);
+            this.ext_label3.TabIndex = 42;
+            this.ext_label3.Text = "ext";
+            this.ext_label3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.ext_label3.Visible = false;
             // 
-            // textBox1
+            // ext3
             // 
-            this.textBox1.Location = new System.Drawing.Point(299, 185);
-            this.textBox1.MaxLength = 4;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(46, 20);
-            this.textBox1.TabIndex = 37;
+            this.ext3.Location = new System.Drawing.Point(171, 262);
+            this.ext3.MaxLength = 4;
+            this.ext3.Name = "ext3";
+            this.ext3.Size = new System.Drawing.Size(46, 20);
+            this.ext3.TabIndex = 41;
+            this.ext3.Visible = false;
+            // 
+            // ext_label2
+            // 
+            this.ext_label2.AutoSize = true;
+            this.ext_label2.Location = new System.Drawing.Point(146, 227);
+            this.ext_label2.Name = "ext_label2";
+            this.ext_label2.Size = new System.Drawing.Size(21, 13);
+            this.ext_label2.TabIndex = 40;
+            this.ext_label2.Text = "ext";
+            this.ext_label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.ext_label2.Visible = false;
+            // 
+            // ext2
+            // 
+            this.ext2.Location = new System.Drawing.Point(171, 223);
+            this.ext2.MaxLength = 4;
+            this.ext2.Name = "ext2";
+            this.ext2.Size = new System.Drawing.Size(46, 20);
+            this.ext2.TabIndex = 39;
+            this.ext2.Visible = false;
+            // 
+            // ext_label1
+            // 
+            this.ext_label1.AutoSize = true;
+            this.ext_label1.Location = new System.Drawing.Point(146, 188);
+            this.ext_label1.Name = "ext_label1";
+            this.ext_label1.Size = new System.Drawing.Size(21, 13);
+            this.ext_label1.TabIndex = 38;
+            this.ext_label1.Text = "ext";
+            this.ext_label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // ext1
+            // 
+            this.ext1.Location = new System.Drawing.Point(171, 184);
+            this.ext1.MaxLength = 4;
+            this.ext1.Name = "ext1";
+            this.ext1.Size = new System.Drawing.Size(46, 20);
+            this.ext1.TabIndex = 37;
             // 
             // comboBox4
             // 
@@ -237,9 +457,9 @@
             "Work",
             "Mobile",
             "Fax"});
-            this.comboBox4.Location = new System.Drawing.Point(176, 301);
+            this.comboBox4.Location = new System.Drawing.Point(223, 301);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(93, 21);
+            this.comboBox4.Size = new System.Drawing.Size(50, 21);
             this.comboBox4.TabIndex = 36;
             this.comboBox4.Visible = false;
             // 
@@ -251,9 +471,9 @@
             "Work",
             "Mobile",
             "Fax"});
-            this.comboBox3.Location = new System.Drawing.Point(176, 262);
+            this.comboBox3.Location = new System.Drawing.Point(223, 262);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(93, 21);
+            this.comboBox3.Size = new System.Drawing.Size(50, 21);
             this.comboBox3.TabIndex = 35;
             this.comboBox3.Visible = false;
             // 
@@ -265,9 +485,9 @@
             "Work",
             "Mobile",
             "Fax"});
-            this.comboBox2.Location = new System.Drawing.Point(176, 224);
+            this.comboBox2.Location = new System.Drawing.Point(223, 223);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(93, 21);
+            this.comboBox2.Size = new System.Drawing.Size(50, 21);
             this.comboBox2.TabIndex = 34;
             this.comboBox2.Visible = false;
             // 
@@ -279,16 +499,16 @@
             "Work",
             "Mobile",
             "Fax"});
-            this.comboBox1.Location = new System.Drawing.Point(176, 185);
+            this.comboBox1.Location = new System.Drawing.Point(223, 184);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(93, 21);
+            this.comboBox1.Size = new System.Drawing.Size(50, 21);
             this.comboBox1.TabIndex = 33;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(21, 288);
+            this.label14.Location = new System.Drawing.Point(29, 287);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(39, 9);
             this.label14.TabIndex = 32;
@@ -300,7 +520,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 249);
+            this.label13.Location = new System.Drawing.Point(29, 248);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 9);
             this.label13.TabIndex = 31;
@@ -312,7 +532,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(21, 208);
+            this.label12.Location = new System.Drawing.Point(29, 207);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 9);
             this.label12.TabIndex = 30;
@@ -321,43 +541,43 @@
             // 
             // phone4_txtbox
             // 
-            this.phone4_txtbox.Location = new System.Drawing.Point(59, 302);
+            this.phone4_txtbox.Location = new System.Drawing.Point(67, 301);
             this.phone4_txtbox.Mask = "(999) 000-0000";
             this.phone4_txtbox.Name = "phone4_txtbox";
-            this.phone4_txtbox.Size = new System.Drawing.Size(103, 20);
+            this.phone4_txtbox.Size = new System.Drawing.Size(79, 20);
             this.phone4_txtbox.TabIndex = 29;
             this.phone4_txtbox.Visible = false;
             // 
             // phone3_txtbox
             // 
-            this.phone3_txtbox.Location = new System.Drawing.Point(59, 263);
+            this.phone3_txtbox.Location = new System.Drawing.Point(67, 262);
             this.phone3_txtbox.Mask = "(999) 000-0000";
             this.phone3_txtbox.Name = "phone3_txtbox";
-            this.phone3_txtbox.Size = new System.Drawing.Size(103, 20);
+            this.phone3_txtbox.Size = new System.Drawing.Size(79, 20);
             this.phone3_txtbox.TabIndex = 28;
             this.phone3_txtbox.Visible = false;
             // 
             // phone2_txtbox
             // 
-            this.phone2_txtbox.Location = new System.Drawing.Point(59, 224);
+            this.phone2_txtbox.Location = new System.Drawing.Point(67, 223);
             this.phone2_txtbox.Mask = "(999) 000-0000";
             this.phone2_txtbox.Name = "phone2_txtbox";
-            this.phone2_txtbox.Size = new System.Drawing.Size(103, 20);
+            this.phone2_txtbox.Size = new System.Drawing.Size(79, 20);
             this.phone2_txtbox.TabIndex = 27;
             this.phone2_txtbox.Visible = false;
             // 
             // phone1_txtbox
             // 
-            this.phone1_txtbox.Location = new System.Drawing.Point(59, 185);
+            this.phone1_txtbox.Location = new System.Drawing.Point(67, 184);
             this.phone1_txtbox.Mask = "(999) 000-0000";
             this.phone1_txtbox.Name = "phone1_txtbox";
-            this.phone1_txtbox.Size = new System.Drawing.Size(103, 20);
+            this.phone1_txtbox.Size = new System.Drawing.Size(79, 20);
             this.phone1_txtbox.TabIndex = 26;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 306);
+            this.label10.Location = new System.Drawing.Point(14, 305);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 24;
@@ -368,7 +588,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 267);
+            this.label11.Location = new System.Drawing.Point(14, 266);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 22;
@@ -378,16 +598,16 @@
             // 
             // fullName_txtbox
             // 
-            this.fullName_txtbox.Location = new System.Drawing.Point(23, 73);
+            this.fullName_txtbox.Location = new System.Drawing.Point(31, 72);
             this.fullName_txtbox.Name = "fullName_txtbox";
             this.fullName_txtbox.ReadOnly = true;
-            this.fullName_txtbox.Size = new System.Drawing.Size(322, 20);
+            this.fullName_txtbox.Size = new System.Drawing.Size(162, 20);
             this.fullName_txtbox.TabIndex = 20;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 57);
+            this.label9.Location = new System.Drawing.Point(14, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 19;
@@ -396,7 +616,7 @@
             // 
             // deleteContact_button
             // 
-            this.deleteContact_button.Location = new System.Drawing.Point(366, 135);
+            this.deleteContact_button.Location = new System.Drawing.Point(287, 135);
             this.deleteContact_button.Name = "deleteContact_button";
             this.deleteContact_button.Size = new System.Drawing.Size(102, 23);
             this.deleteContact_button.TabIndex = 18;
@@ -406,7 +626,7 @@
             // 
             // addContact_button
             // 
-            this.addContact_button.Location = new System.Drawing.Point(366, 47);
+            this.addContact_button.Location = new System.Drawing.Point(287, 47);
             this.addContact_button.Name = "addContact_button";
             this.addContact_button.Size = new System.Drawing.Size(102, 23);
             this.addContact_button.TabIndex = 17;
@@ -416,7 +636,7 @@
             // 
             // updateContact_button
             // 
-            this.updateContact_button.Location = new System.Drawing.Point(366, 91);
+            this.updateContact_button.Location = new System.Drawing.Point(287, 91);
             this.updateContact_button.Name = "updateContact_button";
             this.updateContact_button.Size = new System.Drawing.Size(102, 23);
             this.updateContact_button.TabIndex = 16;
@@ -426,16 +646,16 @@
             // 
             // notes_txtbox
             // 
-            this.notes_txtbox.Location = new System.Drawing.Point(47, 381);
+            this.notes_txtbox.Location = new System.Drawing.Point(55, 380);
             this.notes_txtbox.Multiline = true;
             this.notes_txtbox.Name = "notes_txtbox";
-            this.notes_txtbox.Size = new System.Drawing.Size(298, 57);
+            this.notes_txtbox.Size = new System.Drawing.Size(218, 57);
             this.notes_txtbox.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 383);
+            this.label8.Location = new System.Drawing.Point(14, 382);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 14;
@@ -445,7 +665,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 228);
+            this.label7.Location = new System.Drawing.Point(14, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 12;
@@ -456,7 +676,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 189);
+            this.label6.Location = new System.Drawing.Point(14, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 10;
@@ -465,15 +685,15 @@
             // 
             // website_txtbox
             // 
-            this.website_txtbox.Location = new System.Drawing.Point(23, 353);
+            this.website_txtbox.Location = new System.Drawing.Point(31, 352);
             this.website_txtbox.Name = "website_txtbox";
-            this.website_txtbox.Size = new System.Drawing.Size(322, 20);
+            this.website_txtbox.Size = new System.Drawing.Size(242, 20);
             this.website_txtbox.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 337);
+            this.label5.Location = new System.Drawing.Point(14, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 8;
@@ -482,15 +702,15 @@
             // 
             // email_txtbox
             // 
-            this.email_txtbox.Location = new System.Drawing.Point(23, 156);
+            this.email_txtbox.Location = new System.Drawing.Point(31, 155);
             this.email_txtbox.Name = "email_txtbox";
-            this.email_txtbox.Size = new System.Drawing.Size(322, 20);
+            this.email_txtbox.Size = new System.Drawing.Size(242, 20);
             this.email_txtbox.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 140);
+            this.label4.Location = new System.Drawing.Point(14, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 6;
@@ -499,15 +719,15 @@
             // 
             // companyName_txtbox
             // 
-            this.companyName_txtbox.Location = new System.Drawing.Point(23, 112);
+            this.companyName_txtbox.Location = new System.Drawing.Point(31, 111);
             this.companyName_txtbox.Name = "companyName_txtbox";
-            this.companyName_txtbox.Size = new System.Drawing.Size(322, 20);
+            this.companyName_txtbox.Size = new System.Drawing.Size(162, 20);
             this.companyName_txtbox.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 96);
+            this.label3.Location = new System.Drawing.Point(14, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 4;
@@ -516,16 +736,16 @@
             // 
             // lastName_txtbox
             // 
-            this.lastName_txtbox.Location = new System.Drawing.Point(176, 34);
+            this.lastName_txtbox.Location = new System.Drawing.Point(152, 33);
             this.lastName_txtbox.Name = "lastName_txtbox";
-            this.lastName_txtbox.Size = new System.Drawing.Size(169, 20);
+            this.lastName_txtbox.Size = new System.Drawing.Size(121, 20);
             this.lastName_txtbox.TabIndex = 3;
             this.lastName_txtbox.TextChanged += new System.EventHandler(this.CreateFullName);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(173, 16);
+            this.label2.Location = new System.Drawing.Point(149, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 2;
@@ -533,16 +753,16 @@
             // 
             // firstName_txtbox
             // 
-            this.firstName_txtbox.Location = new System.Drawing.Point(9, 34);
+            this.firstName_txtbox.Location = new System.Drawing.Point(17, 33);
             this.firstName_txtbox.Name = "firstName_txtbox";
-            this.firstName_txtbox.Size = new System.Drawing.Size(153, 20);
+            this.firstName_txtbox.Size = new System.Drawing.Size(129, 20);
             this.firstName_txtbox.TabIndex = 1;
             this.firstName_txtbox.TextChanged += new System.EventHandler(this.CreateFullName);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Location = new System.Drawing.Point(14, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -550,7 +770,7 @@
             // 
             // importContacts_button
             // 
-            this.importContacts_button.Location = new System.Drawing.Point(12, 365);
+            this.importContacts_button.Location = new System.Drawing.Point(15, 443);
             this.importContacts_button.Name = "importContacts_button";
             this.importContacts_button.Size = new System.Drawing.Size(89, 23);
             this.importContacts_button.TabIndex = 21;
@@ -558,14 +778,13 @@
             this.importContacts_button.UseVisualStyleBackColor = true;
             this.importContacts_button.Click += new System.EventHandler(this.ImportContacts_button_Click);
             // 
-            // button1
+            // columnHeader3
             // 
-            this.button1.Location = new System.Drawing.Point(366, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.columnHeader3.Width = 140;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Width = 140;
             // 
             // ContactDetails
             // 
@@ -583,6 +802,15 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContactDetails_FormClosing);
             this.Load += new System.EventHandler(this.ContactDetails_Load);
             this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.per_comp_tabControl.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -610,7 +838,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox firstName_txtbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView pro_comp_listview;
         private System.Windows.Forms.TextBox fullName_txtbox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button importContacts_button;
@@ -627,16 +855,34 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ColumnHeader column1;
+        private System.Windows.Forms.Label ext_label4;
+        private System.Windows.Forms.TextBox ext4;
+        private System.Windows.Forms.Label ext_label3;
+        private System.Windows.Forms.TextBox ext3;
+        private System.Windows.Forms.Label ext_label2;
+        private System.Windows.Forms.TextBox ext2;
+        private System.Windows.Forms.Label ext_label1;
+        private System.Windows.Forms.TextBox ext1;
         private System.Windows.Forms.Button button1;
+        private MyCheckBox myCheckBox1;
+        private System.Windows.Forms.Label contactType_label;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ListView pro_name_listview;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl per_comp_tabControl;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ListView per_comp_listview;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ListView per_name_listview;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 
