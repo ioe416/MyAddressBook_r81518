@@ -30,7 +30,7 @@ namespace MyAddressBook_r81518
         private Workbook xlWorkBook;
         private Worksheet xlWorkSheet;
 
-        public string book;
+        public string book = "Personal";
         public string firstName;
         public string lastName;
         public string fullName;
@@ -127,33 +127,69 @@ namespace MyAddressBook_r81518
 
         private void AddContact_button_Click(object sender, EventArgs e)
         {
-            Contact p = new Contact
+            if (book == "Personal")
             {
-                Book = book,
-                FirstName = firstName_txtbox.Text,
-                LastName = lastName_txtbox.Text,
-                FullName = fullName_txtbox.Text,
-                CompanyName = companyName_txtbox.Text,
-                Email = email_txtbox.Text,
-                CompanyWebsite = website_txtbox.Text,
-                Phone1 = phone1_txtbox.Text,
-                PhoneType1 = comboBox1.Text,
-                Extention1 = ext1.Text,
-                Phone2 = phone2_txtbox.Text,
-                PhoneType2 = comboBox2.Text,
-                Extention2 = ext2.Text,
-                Phone3 = phone3_txtbox.Text,
-                PhoneType3 = comboBox3.Text,
-                Extention3 = ext3.Text,
-                Phone4 = phone4_txtbox.Text,
-                PhoneType4 = comboBox4.Text,
-                Extention4 = ext4.Text,
-                Notes = notes_txtbox.Text
-            };
-            personalCompany.Add(p);
-            pro_comp_listview.Items.Add(p.FirstName + " " + p.LastName);
+                Contact p = new Contact
+                {
+                    Book = book,
+                    FirstName = firstName_txtbox.Text,
+                    LastName = lastName_txtbox.Text,
+                    FullName = fullName_txtbox.Text,
+                    CompanyName = companyName_txtbox.Text,
+                    Email = email_txtbox.Text,
+                    CompanyWebsite = website_txtbox.Text,
+                    Phone1 = phone1_txtbox.Text,
+                    PhoneType1 = comboBox1.Text,
+                    Extention1 = ext1.Text,
+                    Phone2 = phone2_txtbox.Text,
+                    PhoneType2 = comboBox2.Text,
+                    Extention2 = ext2.Text,
+                    Phone3 = phone3_txtbox.Text,
+                    PhoneType3 = comboBox3.Text,
+                    Extention3 = ext3.Text,
+                    Phone4 = phone4_txtbox.Text,
+                    PhoneType4 = comboBox4.Text,
+                    Extention4 = ext4.Text,
+                    Notes = notes_txtbox.Text
+                };
+                personal.Add(p);
+                per_name_listview.Items.Add(p.FirstName + " " + p.LastName);
+                per_comp_listview.Items.Add(p.CompanyName);
 
-            Clear_TextBoxes();
+                Clear_TextBoxes();
+            }
+            else if (book == "Professional")
+            {
+                Contact p = new Contact
+                {
+                    Book = book,
+                    FirstName = firstName_txtbox.Text,
+                    LastName = lastName_txtbox.Text,
+                    FullName = fullName_txtbox.Text,
+                    CompanyName = companyName_txtbox.Text,
+                    Email = email_txtbox.Text,
+                    CompanyWebsite = website_txtbox.Text,
+                    Phone1 = phone1_txtbox.Text,
+                    PhoneType1 = comboBox1.Text,
+                    Extention1 = ext1.Text,
+                    Phone2 = phone2_txtbox.Text,
+                    PhoneType2 = comboBox2.Text,
+                    Extention2 = ext2.Text,
+                    Phone3 = phone3_txtbox.Text,
+                    PhoneType3 = comboBox3.Text,
+                    Extention3 = ext3.Text,
+                    Phone4 = phone4_txtbox.Text,
+                    PhoneType4 = comboBox4.Text,
+                    Extention4 = ext4.Text,
+                    Notes = notes_txtbox.Text
+                };
+                professional.Add(p);
+                pro_name_listview.Items.Add(p.FirstName + " " + p.LastName);
+                pro_comp_listview.Items.Add(p.CompanyName);
+
+                Clear_TextBoxes();
+            }
+            
         }
 
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
