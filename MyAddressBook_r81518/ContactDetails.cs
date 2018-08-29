@@ -23,6 +23,8 @@ namespace MyAddressBook_r81518
         List<Contact> personalName = new List<Contact>();
         List<Contact> professionalCompany = new List<Contact>();
         List<Contact> professionalName = new List<Contact>();
+        List<Contact> professional = new List<Contact>();
+        List<Contact> personal = new List<Contact>();
 
         private Microsoft.Office.Interop.Excel.Application xlApp;
         private Workbook xlWorkBook;
@@ -55,20 +57,26 @@ namespace MyAddressBook_r81518
 
             pro_comp_listview.View = View.Details;
             pro_comp_listview.HeaderStyle = ColumnHeaderStyle.None;
+            pro_name_listview.View = View.Details;
+            pro_name_listview.HeaderStyle = ColumnHeaderStyle.None;
+            per_comp_listview.View = View.Details;
+            per_comp_listview.HeaderStyle = ColumnHeaderStyle.None;
+            per_name_listview.View = View.Details;
+            per_name_listview.HeaderStyle = ColumnHeaderStyle.None;
 
             if (!Directory.Exists(path + "\\Address Book"))
                 Directory.CreateDirectory(path + "\\Address Book");
-            if (!File.Exists(path + "\\Address Book\\settings.xml"))
+
+            if (!File.Exists(path + "\\Address Book\\professional.xml"))
             {
-                XmlTextWriter xw = new XmlTextWriter(path + "\\Address Book\\settings.xml", Encoding.UTF8);
+                XmlTextWriter xw = new XmlTextWriter(path + "\\Address Book\\professional.xml", Encoding.UTF8);
                 xw.WriteStartElement("Contacts");
                 xw.WriteEndElement();
                 xw.Close();
             }
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(path + "\\Address Book\\settings.xml");
-
-            foreach (XmlNode xNode in xDoc.SelectNodes("Contacts/Person"))
+            XmlDocument professionalDoc = new XmlDocument();
+            professionalDoc.Load(path + "\\Address Book\\professional.xml");
+            foreach (XmlNode xNode in professionalDoc.SelectNodes("Contacts/Person"))
             {
                 Contact p = new Contact
                 {
@@ -82,10 +90,37 @@ namespace MyAddressBook_r81518
                     Phone2 = xNode.SelectSingleNode("MobilePhone").InnerText,
                     Notes = xNode.SelectSingleNode("Notes").InnerText
                 };
-                personalCompany.Add(p);
-
+                professional.Add(p);
                 pro_comp_listview.Items.Add(p.CompanyName);
                 pro_name_listview.Items.Add(p.FirstName + " " + p.LastName);
+            }
+
+            if (!File.Exists(path + "\\Address Book\\personal.xml"))
+            {
+                XmlTextWriter xw = new XmlTextWriter(path + "\\Address Book\\personal.xml", Encoding.UTF8);
+                xw.WriteStartElement("Contacts");
+                xw.WriteEndElement();
+                xw.Close();
+            }
+            XmlDocument personalDoc = new XmlDocument();
+            personalDoc.Load(path + "\\Address Book\\personal.xml");
+            foreach (XmlNode xNode in personalDoc.SelectNodes("Contacts/Person"))
+            {
+                Contact p = new Contact
+                {
+                    FirstName = xNode.SelectSingleNode("FirstName").InnerText,
+                    LastName = xNode.SelectSingleNode("LastName").InnerText,
+                    FullName = xNode.SelectSingleNode("FullName").InnerText,
+                    CompanyName = xNode.SelectSingleNode("CompanyName").InnerText,
+                    CompanyWebsite = xNode.SelectSingleNode("Website").InnerText,
+                    Email = xNode.SelectSingleNode("Email").InnerText,
+                    Phone1 = xNode.SelectSingleNode("CompanyPhone").InnerText,
+                    Phone2 = xNode.SelectSingleNode("MobilePhone").InnerText,
+                    Notes = xNode.SelectSingleNode("Notes").InnerText
+                };
+                personal.Add(p);
+                per_comp_listview.Items.Add(p.CompanyName);
+                per_name_listview.Items.Add(p.FirstName + " " + p.LastName);
             }
 
         }
@@ -191,24 +226,27 @@ namespace MyAddressBook_r81518
 
         private void ContactDetails_FormClosing(object sender, FormClosingEventArgs e)
         {
-            XmlDocument xDoc = new XmlDocument();
+            XmlDocument personalDoc = new XmlDocument();
+            XmlDocument professionalDoc = new XmlDocument();
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            xDoc.Load(path + "\\Address Book\\settings.xml");
-            XmlNode xNode = xDoc.SelectSingleNode("Contacts");
+            personalDoc.Load(path + "\\Address Book\\personal.xml");
+            professionalDoc.Load(path + "\\Address Book\\professional.xml");
+            XmlNode xNode = personalDoc.SelectSingleNode("Contacts");
+            XmlNode yNode = professionalDoc.SelectSingleNode("Contacts");
             xNode.RemoveAll();
 
-            foreach (Contact p in personalCompany)
+            foreach (Contact p in personal)
             {
-                XmlNode xTop = xDoc.CreateElement("Person");
-                XmlNode xFirstName = xDoc.CreateElement("FirstName");
-                XmlNode xLastName = xDoc.CreateElement("LastName");
-                XmlNode xFullName = xDoc.CreateElement("FullName");
-                XmlNode xCompanyName = xDoc.CreateElement("CompanyName");
-                XmlNode xCompanyWebsite = xDoc.CreateElement("Website");
-                XmlNode xEmail = xDoc.CreateElement("Email");
-                XmlNode xCompanyPhone = xDoc.CreateElement("CompanyPhone");
-                XmlNode xMobilePhone = xDoc.CreateElement("MobilePhone");
-                XmlNode xNotes = xDoc.CreateElement("Notes");
+                XmlNode xTop = personalDoc.CreateElement("Person");
+                XmlNode xFirstName = personalDoc.CreateElement("FirstName");
+                XmlNode xLastName = personalDoc.CreateElement("LastName");
+                XmlNode xFullName = personalDoc.CreateElement("FullName");
+                XmlNode xCompanyName = personalDoc.CreateElement("CompanyName");
+                XmlNode xCompanyWebsite = personalDoc.CreateElement("Website");
+                XmlNode xEmail = personalDoc.CreateElement("Email");
+                XmlNode xCompanyPhone = personalDoc.CreateElement("CompanyPhone");
+                XmlNode xMobilePhone = personalDoc.CreateElement("MobilePhone");
+                XmlNode xNotes = personalDoc.CreateElement("Notes");
 
                 xFirstName.InnerText = p.FirstName;
                 xLastName.InnerText = p.LastName;
@@ -228,9 +266,43 @@ namespace MyAddressBook_r81518
                 xTop.AppendChild(xCompanyPhone);
                 xTop.AppendChild(xMobilePhone);
                 xTop.AppendChild(xNotes);
-                xDoc.DocumentElement.AppendChild(xTop);
+                personalDoc.DocumentElement.AppendChild(xTop);
             }
-            xDoc.Save(path + "\\Address Book\\settings.xml");
+            personalDoc.Save(path + "\\Address Book\\personal.xml");
+            foreach (Contact p in professional)
+            {
+                XmlNode xTop = professionalDoc.CreateElement("Person");
+                XmlNode xFirstName = professionalDoc.CreateElement("FirstName");
+                XmlNode xLastName = professionalDoc.CreateElement("LastName");
+                XmlNode xFullName = professionalDoc.CreateElement("FullName");
+                XmlNode xCompanyName = professionalDoc.CreateElement("CompanyName");
+                XmlNode xCompanyWebsite = professionalDoc.CreateElement("Website");
+                XmlNode xEmail = professionalDoc.CreateElement("Email");
+                XmlNode xCompanyPhone = professionalDoc.CreateElement("CompanyPhone");
+                XmlNode xMobilePhone = professionalDoc.CreateElement("MobilePhone");
+                XmlNode xNotes = professionalDoc.CreateElement("Notes");
+
+                xFirstName.InnerText = p.FirstName;
+                xLastName.InnerText = p.LastName;
+                xFullName.InnerText = p.FullName;
+                xCompanyName.InnerText = p.CompanyName;
+                xCompanyWebsite.InnerText = p.CompanyWebsite;
+                xEmail.InnerText = p.Email;
+                xCompanyPhone.InnerText = p.Phone1;
+                xMobilePhone.InnerText = p.Phone2;
+                xNotes.InnerText = p.Notes;
+                xTop.AppendChild(xFirstName);
+                xTop.AppendChild(xLastName);
+                xTop.AppendChild(xFullName);
+                xTop.AppendChild(xCompanyName);
+                xTop.AppendChild(xCompanyWebsite);
+                xTop.AppendChild(xEmail);
+                xTop.AppendChild(xCompanyPhone);
+                xTop.AppendChild(xMobilePhone);
+                xTop.AppendChild(xNotes);
+                professionalDoc.DocumentElement.AppendChild(xTop);
+            }
+            professionalDoc.Save(path + "\\Address Book\\professional.xml");
         }
 
         private void ImportContacts_button_Click(object sender, EventArgs e)
