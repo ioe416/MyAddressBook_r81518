@@ -91,7 +91,10 @@ namespace MyAddressBook_r81518
                     Notes = xNode.SelectSingleNode("Notes").InnerText
                 };
                 professional.Add(p);
+
                 pro_comp_listview.Items.Add(p.CompanyName);
+                pro_comp_listview.Items.Add(p.FirstName);
+                pro_comp_listview.Items.Add(p.LastName);
                 pro_name_listview.Items.Add(p.FirstName + " " + p.LastName);
             }
 
